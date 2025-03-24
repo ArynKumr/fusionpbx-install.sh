@@ -79,6 +79,10 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p tcp --dport 7443 -j ACCEPT
+iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 5432 -j ACCEPT
+iptables -A INPUT -p vrrp -j ACCEPT
+iptables -A OUTPUT -p vrrp -j ACCEPT
 iptables -A INPUT -p tcp --dport 5060:5091 -j ACCEPT
 iptables -A INPUT -p udp --dport 5060:5091 -j ACCEPT
 iptables -A INPUT -p udp --dport 16384:32768 -j ACCEPT
